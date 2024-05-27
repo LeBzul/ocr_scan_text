@@ -4,7 +4,7 @@ import 'package:ocr_scan_text/ocr_scan_text.dart';
 class ScanAllModule extends ScanModule {
   ScanAllModule()
       : super(
-          label: '',
+          label: 'All',
           color: Colors.redAccent.withOpacity(0.3),
           validateCountCorrelation: 1,
         );

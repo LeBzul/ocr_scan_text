@@ -16,15 +16,17 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Scan"),
-      ),
-      body: Center(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width - 20,
-          height: MediaQuery.of(context).size.height - 40,
-          child: _buildLiveScan(),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Scan"),
+        ),
+        body: Center(
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width - 20,
+            height: MediaQuery.of(context).size.height - 40,
+            child: _buildLiveScan(),
+          ),
         ),
       ),
     );
@@ -35,7 +37,7 @@ class _MyAppState extends State<MyApp> {
       ocrTextResult: (ocrTextResult) {
         ocrTextResult.mapResult.forEach((module, result) {});
       },
-      scanModules: [ScanAllModule()],
+      scanModules: [ScanAllModule()..start()],
     );
   }
 }
